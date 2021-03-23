@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import RootNavigator from './RootNavigator';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import Reducers from './reducers';
+import Reducers from './reduxSection/reducers';
 export default class App extends Component {
   render() {
     return (

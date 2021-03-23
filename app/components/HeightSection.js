@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import {Slider, View, Text, StyleSheet} from 'react-native';
-import Container from './Container';
+import { View, Text, StyleSheet} from 'react-native';
+import Slider from '@react-native-community/slider';
+import {Container} from '../components';
 import {connect} from 'react-redux';
-import {setHeight} from './actions';
+import {setHeight} from '../reduxSection/actions';
+import {labelStyle, numberStyle} from './constant';
 
 class HeightSection extends Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class HeightSection extends Component {
           minimumValue={120}
           maximumValue={220}
           minimumTrackTintColor="#CF0054"
-          maximumTrackTintColor="grey"
+          maximumTrackTintColor="#8D8E98"
+          thumbTintColor='white'
           style={styles.slider}
           onValueChange={(value) => {
             this.setState({heightValue: parseInt(value)});
@@ -42,19 +45,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
   },
-  heightStyle: {
-    color: 'white',
-    fontSize: 15,
-  },
+  heightStyle: labelStyle,
   cm: {
     color: 'white',
     fontSize: 12,
     fontWeight: 'bold',
   },
-  numberStye: {
-    color: 'white',
-    fontSize: 42,
-    fontWeight: 'bold',
-  },
+  numberStye: numberStyle,
 });
 export default connect(null, {setHeight})(HeightSection);

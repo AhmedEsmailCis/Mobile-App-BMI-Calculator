@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {connect} from 'react-redux';
-import {setSexType} from './actions';
-import Container from './Container';
+import {setSexType} from '../reduxSection/actions';
+import {Container} from '../components';
 import Icon from 'react-native-vector-icons/Fontisto';
+import {labelStyle} from './constant';
 class SexContainer extends Component {
   constructor(props) {
     super(props);
@@ -54,11 +55,7 @@ const styles = StyleSheet.create({
     margin: 3,
     marginBottom: 10,
   },
-  labelStyle: {
-    color: 'white',
-    fontSize: 15,
-    textAlign: 'center',
-  },
+  labelStyle: labelStyle,
   buttonStyle: {
     height: '100%',
     width: '100%',

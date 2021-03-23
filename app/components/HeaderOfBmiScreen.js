@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default class HeaderOfBmiScreen extends Component {
+class HeaderOfBmiScreen extends Component {
   render() {
     return (
       <View style={styles.headerStyle}>
@@ -10,14 +10,16 @@ export default class HeaderOfBmiScreen extends Component {
     );
   }
 }
+export {HeaderOfBmiScreen};
 const styles = StyleSheet.create({
   headerStyle: {
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: 50,
-    backgroundColor: '#11163A',
+    height: 60,
+    backgroundColor: '#212544',
     marginBottom: 5,
+    elevation: 15,
   },
   textStyle: {
     color: 'white',

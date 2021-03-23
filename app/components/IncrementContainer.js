@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {setNumber} from './actions';
-
+import {setNumber} from '../reduxSection/actions';
+import {labelStyle, numberStyle} from './constant';
 class IncrementContainer extends Component {
   x = 0;
   constructor(props) {
@@ -50,31 +50,23 @@ class IncrementContainer extends Component {
 }
 const styles = StyleSheet.create({
   rowViewOfIncrementButtons: {flexDirection: 'row'},
-  sectionLabelStyle: {
-    color: 'lightgrey',
-    fontSize: 18,
-    marginTop: 5,
-  },
-  numberStyle: {
-    color: 'white',
-    fontSize: 42,
-    fontWeight: 'bold',
-  },
+  sectionLabelStyle: labelStyle,
+  numberStyle: numberStyle,
   incrementSymbolStyle: {
     color: 'white',
-    fontSize: 50,
+    fontSize: 40,
     marginBottom: 5,
     fontWeight: 'bold',
   },
-
   buttonViewStyle: {
-    backgroundColor: '#212544',
-    width: 50,
-    height: 50,
+    backgroundColor: '#757575',
+    width: 40,
+    height: 40,
     borderRadius: 40,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 5,
+    elevation: 15,
   },
   TouchableOpacityStyle: {
     height: '100%',
