@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-
-class HeaderOfBmiScreen extends Component {
-  render() {
-    return (
-      <View style={styles.headerStyle}>
-        <Text style={styles.textStyle}>BMI CALCULATOR</Text>
-      </View>
-    );
-  }
+function HeaderOfBmiScreen() {
+  return (
+    <View style={styles.headerStyle}>
+      <Text style={styles.textStyle}>BMI CALCULATOR</Text>
+    </View>
+  );
 }
 export {HeaderOfBmiScreen};
 const styles = StyleSheet.create({

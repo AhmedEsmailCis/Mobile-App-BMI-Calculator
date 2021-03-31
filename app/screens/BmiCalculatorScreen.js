@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -16,34 +16,32 @@ import {
 } from '../components';
 import {connect} from 'react-redux';
 
-class BmiCalculatorScreen extends Component {
-  onPressFunc = () => {
+function BmiCalculatorScreen(props) {
+   const onPressFunc = () => {
     const bmi =
-      this.props.weightValue / Math.pow(this.props.heightValue / 100, 2);
+      props.weightValue / Math.pow(props.heightValue / 100, 2);
 
-    this.props.navigation.navigate('Result', {bmi: bmi.toFixed(2)});
+    props.navigation.navigate('Result', {bmi: bmi.toFixed(2)});
   };
-  render() {
-    return (
-      <View style={styles.screenStyle}>
-        <StatusBar backgroundColor="#0B1030" />
-        <HeaderOfBmiScreen />
-        <SexContainer />
-        <HeightSection />
-        <View style={styles.rowForIncrementSection}>
-          <Container>
-            <IncrementContainer sectionLabel="WEIGHT" number={70} />
-          </Container>
-          <Container>
-            <IncrementContainer sectionLabel="AGE" number={20} />
-          </Container>
-        </View>
-        <Button
-          onPressFunc={this.onPressFunc}
-          label="CALCULATE YOUR BMI"></Button>
+  return (
+    <View style={styles.screenStyle}>
+      <StatusBar backgroundColor="#0B1030" />
+      <HeaderOfBmiScreen />
+      <SexContainer />
+      <HeightSection />
+      <View style={styles.rowForIncrementSection}>
+        <Container>
+          <IncrementContainer sectionLabel="WEIGHT" number={70} />
+        </Container>
+        <Container>
+          <IncrementContainer sectionLabel="AGE" number={25} />
+        </Container>
       </View>
-    );
-  }
+      <Button
+        onPressFunc={onPressFunc}
+        label="CALCULATE YOUR BMI"></Button>
+    </View>
+  );
 }
 const styles = StyleSheet.create({
   rowForIncrementSection: {flexDirection: 'row', flex: 1},

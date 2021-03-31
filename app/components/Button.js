@@ -1,22 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-class Button extends Component {
-  render() {
-    return (
-      <View style={styles.buttonStyle}>
-        <TouchableOpacity
-          onPress={this.props.onPressFunc}
-          style={styles.TouchableOpacityStyle}>
-          <Text style={styles.buttonText}>{this.props.label}</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+function Button(props) {
+   return (
+     <View style={styles.buttonStyle}>
+       <TouchableOpacity
+         onPress={props.onPressFunc}
+         style={styles.TouchableOpacityStyle}>
+         <Text style={styles.buttonText}>{props.label}</Text>
+       </TouchableOpacity>
+     </View>
+   );
 }
 const styles = StyleSheet.create({
   TouchableOpacityStyle: {
