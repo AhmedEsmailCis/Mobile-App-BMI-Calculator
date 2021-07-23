@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import Slider from '@react-native-community/slider';
-import {Container} from '../components';
-import {connect} from 'react-redux';
-import {setHeight} from '../reduxSection/actions';
-import {labelStyle, numberStyle} from './constant';
+import React, { useState } from "react";
+import { View, Text, StyleSheet } from "react-native";
+import Slider from "@react-native-community/slider";
+import { connect } from "react-redux";
+import { Container } from "./Container";
+import { setHeight } from "../redux/actions";
+import { labelStyle, numberStyle } from "../common/constant";
 
 function HeightSection(props) {
   const [height, setHeightValue] = useState(170);
@@ -24,26 +24,25 @@ function HeightSection(props) {
         thumbTintColor="white"
         style={styles.slider}
         onValueChange={(value) => {
-          const heightValue = parseInt(value);
-          setHeightValue(heightValue);
-          props.setHeight({heightValue});
+          setHeightValue(value.toFixed(0));
+          props.setHeight({ heightValue: value.toFixed(0) });
         }}
       />
     </Container>
   );
 }
 const styles = StyleSheet.create({
-  slider: {width: '100%', marginTop: 10},
+  slider: { width: "100%", marginTop: 10 },
   groupStyle: {
-    flexDirection: 'row',
-    alignItems: 'baseline',
+    flexDirection: "row",
+    alignItems: "baseline",
   },
   heightStyle: labelStyle,
   cm: {
-    color: 'white',
+    color: "white",
     fontSize: 12,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   numberStye: numberStyle,
 });
-export default connect(null, {setHeight})(HeightSection);
+export default connect(null, { setHeight })(HeightSection);

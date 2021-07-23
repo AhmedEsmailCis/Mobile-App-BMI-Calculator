@@ -1,5 +1,6 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+
 function HeaderOfBmiScreen() {
   return (
     <View style={styles.headerStyle}>
@@ -7,20 +8,20 @@ function HeaderOfBmiScreen() {
     </View>
   );
 }
-export {HeaderOfBmiScreen};
+export { HeaderOfBmiScreen };
 const styles = StyleSheet.create({
   headerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
     height: 60,
-    backgroundColor: '#212544',
+    backgroundColor: "#212544",
     marginBottom: 5,
     elevation: 15,
   },
   textStyle: {
-    color: 'white',
+    color: "white",
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });

@@ -1,7 +1,8 @@
-import {createAppContainer} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation-stack';
-import BmiCalculatorScreen from './screens/BmiCalculatorScreen';
-import ResultScreen from './screens/ResultScreen';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import BmiCalculatorScreen from "../screens/BmiCalculatorScreen";
+import ResultScreen from "../screens/ResultScreen";
+
 const RootNavigator = createStackNavigator({
   BmiCalculator: {
     screen: BmiCalculatorScreen,
